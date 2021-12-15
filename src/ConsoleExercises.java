@@ -47,10 +47,25 @@ public class ConsoleExercises {
 //
 //        System.out.printf("You entered: %n%s%n%s%n%s", firstWord, secondWord, thirdWord);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        System.out.print("Enter a sentence: ");
-        String userSentence = scanner.nextLine();
+//        System.out.print("Enter a sentence: ");
+//        String userSentence = scanner.nextLine();
+//
+//        System.out.printf("%nYou entered: %s.", userSentence);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        System.out.println("Calculate the perimeter of the classroom.");
 
-        System.out.printf("%nYou entered: %s.", userSentence);
+        System.out.print("Enter the length: ");
+        String userLength = scanner.nextLine();
+        int parsedLength = Integer.parseInt(userLength);
+
+
+        System.out.printf("%nEnter the width: ");
+        String userWidth = scanner.nextLine();
+        int parsedWidth = Integer.parseInt(userWidth);
+
+        System.out.printf("%nThe area is: %d, the perimeter is %d.", (parsedLength * parsedWidth), ((2 * parsedLength) + (2 * parsedWidth)));
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }//end main
