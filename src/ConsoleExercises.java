@@ -56,14 +56,18 @@ public class ConsoleExercises {
 
         System.out.print("Enter the length: ");
         String userLength = scanner.nextLine();
-        int parsedLength = Integer.parseInt(userLength);
+        float parsedLength = Float.parseFloat(userLength);
 
 
         System.out.printf("%nEnter the width: ");
         String userWidth = scanner.nextLine();
-        int parsedWidth = Integer.parseInt(userWidth);
+        float parsedWidth = Float.parseFloat(userWidth);
 
-        System.out.printf("%nThe area is: %d, the perimeter is %d.", (parsedLength * parsedWidth), ((2 * parsedLength) + (2 * parsedWidth)));
+        System.out.printf("%nEnter the height: ");
+        String userHeight = scanner.nextLine();
+        float parsedHeight = Float.parseFloat(userWidth);
+
+        System.out.printf("%nThe area is: %.2f, the perimeter is %.2f, and the volume is %.2f.", (parsedLength * parsedWidth), ((2 * parsedLength) + (2 * parsedWidth)), (parsedLength * parsedWidth * parsedHeight));
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
