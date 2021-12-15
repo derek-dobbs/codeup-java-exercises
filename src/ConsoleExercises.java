@@ -21,6 +21,7 @@ public class ConsoleExercises {
         //If the input is not an integer there will be an error message "InputMismatchException"
 
         Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter("\n");
 
 //        System.out.print("Enter an integer: ");
 //        String userInput = scanner.next();
@@ -59,15 +60,15 @@ public class ConsoleExercises {
         float parsedLength = Float.parseFloat(userLength);
 
 
-        System.out.printf("%nEnter the width: ");
+        System.out.print("Enter the width: ");
         String userWidth = scanner.nextLine();
         float parsedWidth = Float.parseFloat(userWidth);
 
-        System.out.printf("%nEnter the height: ");
+        System.out.print("Enter the height: ");
         String userHeight = scanner.nextLine();
         float parsedHeight = Float.parseFloat(userWidth);
 
-        System.out.printf("%nThe area is: %.2f, the perimeter is %.2f, and the volume is %.2f.", (parsedLength * parsedWidth), ((2 * parsedLength) + (2 * parsedWidth)), (parsedLength * parsedWidth * parsedHeight));
+        System.out.printf("The area is: %.2f, the perimeter is %.2f, and the volume is %.2f.", (parsedLength * parsedWidth), ((2 * parsedLength) + (2 * parsedWidth)), (parsedLength * parsedWidth * parsedHeight));
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
