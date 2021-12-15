@@ -45,7 +45,7 @@ public class ConsoleExercises {
         System.out.printf("%nEnter the third word: ");
         String thirdWord = scanner.nextLine();
 
-        System.out.printf("You entered: %s, %s, and %s", firstWord, secondWord, thirdWord);
+        System.out.printf("You entered: %n%s%n%s%n%s", firstWord, secondWord, thirdWord);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }//end main
