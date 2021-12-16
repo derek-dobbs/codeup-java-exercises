@@ -99,6 +99,44 @@ public class ControlFlowExercises {
         else {
             System.out.println("Invalid entry...");
         }
+
+        //A+: 97 - 100
+        //A: 92 - 96
+        //A-: 88 - 91
+
+//        if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: A+");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: A");
+//        }else if (numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: A-");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: B+");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: B");
+//        }else if (numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: B-");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: C+");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: C");
+//        }else if (numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: C-");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: D+");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: D");
+//        }else if (numberGrade <  && numberGrade >= )) {
+//            System.out.println("Letter grade: D-");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: F+");
+//        }else if(numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: F");
+//        }else if (numberGrade <  && numberGrade >= ) {
+//            System.out.println("Letter grade: F-");
+//        }else {
+//            System.out.println("Invalid entry");
+//        }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }//end main
 }// end class
