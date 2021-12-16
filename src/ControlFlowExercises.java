@@ -63,13 +63,26 @@ public class ControlFlowExercises {
             long squaredNumber = i * i;
             long cubedNumber = i * i * i;
 
-            if(i < 4) {
-                System.out.printf("%d\t\t| %d\t\t\t| %d%n", i, squaredNumber, cubedNumber);
-            }else {
+            if (i >= 1000) {
+                System.out.printf("%d\t| %d\t\t| %d%n", i, squaredNumber, cubedNumber);
+            }else if(i >= 4) {
                 System.out.printf("%d\t\t| %d\t\t| %d%n", i, squaredNumber, cubedNumber);
+            }else {
+                System.out.printf("%d\t\t| %d\t\t\t| %d%n", i, squaredNumber, cubedNumber);
             }
         }
+
+        System.out.print("Would you like to continue? ");
+        char userChoice = Character.toLowerCase(scanner.next().charAt(0));
+        if (userChoice == 'y') {
+            System.out.println("Restarting...");
+        }else {
+            System.out.println("Exiting...");
+            System.exit(0);
+        }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }//end main
