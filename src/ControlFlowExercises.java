@@ -52,38 +52,53 @@ public class ControlFlowExercises {
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         Scanner scanner = new Scanner(System.in);
-        System.out.print("What number would you like to go up to? ");
-        int userInput = scanner.nextInt();
-        System.out.println("Here is your table!");
-        System.out.println();
-        System.out.println("number\t| squared\t| cubed");
-        System.out.println("------\t| -------\t| -----");
-
-        for (int i = 1; i <= userInput; i++) {
-            long squaredNumber = i * i;
-            long cubedNumber = i * i * i;
-
-            if (i >= 1000) {
-                System.out.printf("%d\t| %d\t\t| %d%n", i, squaredNumber, cubedNumber);
-            }else if(i >= 4) {
-                System.out.printf("%d\t\t| %d\t\t| %d%n", i, squaredNumber, cubedNumber);
-            }else {
-                System.out.printf("%d\t\t| %d\t\t\t| %d%n", i, squaredNumber, cubedNumber);
-            }
-        }
-
-        System.out.print("Would you like to continue? ");
-        char userChoice = Character.toLowerCase(scanner.next().charAt(0));
-        if (userChoice == 'y') {
-            System.out.println("Restarting...");
-        }else {
-            System.out.println("Exiting...");
-            System.exit(0);
-        }
+//        System.out.print("What number would you like to go up to? ");
+//        int userInput = scanner.nextInt();
+//        System.out.println("Here is your table!");
+//        System.out.println();
+//        System.out.println("number\t| squared\t| cubed");
+//        System.out.println("------\t| -------\t| -----");
+//
+//        for (int i = 1; i <= userInput; i++) {
+//            long squaredNumber = i * i;
+//            long cubedNumber = i * i * i;
+//
+//            if (i >= 1000) {
+//                System.out.printf("%d\t| %d\t\t| %d%n", i, squaredNumber, cubedNumber);
+//            }else if(i >= 4) {
+//                System.out.printf("%d\t\t| %d\t\t| %d%n", i, squaredNumber, cubedNumber);
+//            }else {
+//                System.out.printf("%d\t\t| %d\t\t\t| %d%n", i, squaredNumber, cubedNumber);
+//            }
+//        }
+//
+//        System.out.print("Would you like to continue? ");
+//        char userChoice = Character.toLowerCase(scanner.next().charAt(0));
+//        if (userChoice == 'y') {
+//            System.out.println("Restarting...");
+//        }else {
+//            System.out.println("Exiting...");
+//            System.exit(0);
+//        }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        System.out.print("Enter a numerical grade between 0 and 100: ");
+        int numberGrade = scanner.nextInt();
 
-
+        if(numberGrade >= 88 && numberGrade < 101) {
+            System.out.println("Letter grade: A");
+        }else if(numberGrade >= 80 && numberGrade < 88){
+            System.out.println("Letter grade: B");
+        }else if(numberGrade >= 67 && numberGrade < 80){
+            System.out.println("Letter grade: C");
+        }else if(numberGrade >= 60 && numberGrade < 67){
+            System.out.println("Letter grade: D");
+        }else if(numberGrade >= 0 && numberGrade < 60){
+            System.out.println("Letter grade: F");
+        }
+        else {
+            System.out.println("Invalid entry...");
+        }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }//end main
 }// end class
