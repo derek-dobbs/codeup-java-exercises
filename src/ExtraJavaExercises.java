@@ -9,14 +9,15 @@ public class ExtraJavaExercises {
         //Expected Output :
         //The sum of 10 numbers is : 55
         //The Average is : 5.500000
-        float sum = 0f;
 
-        for (int i = 1; i < 11; i++) {
-            System.out.printf("Enter number %d: ", i);
-            sum += scanner.nextFloat();
-        }
-
-        System.out.printf("The sum of the numbers is: %.0f %nThe average is: %.6f.", sum, sum/10);
+//        float sum = 0f;
+//
+//        for (int i = 1; i < 11; i++) {
+//            System.out.printf("Enter number %d: ", i);
+//            sum += scanner.nextFloat();
+//        }
+//
+//        System.out.printf("The sum of the numbers is: %.0f %nThe average is: %.6f.", sum, sum/10);
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //2. Write a program in Java to display the cube of the number upto given an integer. Read the number using the Scanner class.
         //
@@ -26,6 +27,10 @@ public class ExtraJavaExercises {
         //Number is : 3 and cube of the 3 is :27
         //Number is : 4 and cube of the 4 is :64
         //Number is : 5 and cube of the 5 is :125
+
+        System.out.print("What number would you like to go up to? ");
+        int max = scanner.nextInt();
+        System.out.println(max);
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // 3. Write a program in Java to display the n terms of odd natural number and their sum. Read the odd number using the Scanner class
         //
