@@ -16,7 +16,7 @@ public class ExtraJavaExercises {
             sum += scanner.nextFloat();
         }
 
-        System.out.printf("The sum of the numbers is: %.2f and the average is: %.2f.", sum, sum/10);
+        System.out.printf("The sum of the numbers is: %.0f %nThe average is: %.6f.", sum, sum/10);
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //2. Write a program in Java to display the cube of the number upto given an integer. Read the number using the Scanner class.
         //
