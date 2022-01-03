@@ -76,7 +76,7 @@ public class ControlFlowExercises {
 //                }
 //            }
 //
-//            System.out.print("Would you like to continue? ");
+//            System.out.print("Would you like to continue? y/n ");
 //            char userChoice = Character.toLowerCase(scanner.next().charAt(0));
 //            if (userChoice == 'y') {
 //                System.out.println("Restarting...");
@@ -108,7 +108,7 @@ public class ControlFlowExercises {
                 System.out.println("Invalid entry...");
             }
 
-            System.out.print("Would you like to continue? ");
+            System.out.print("Would you like to continue? y/n");
             char userChoice = Character.toLowerCase(scanner.next().charAt(0));
             if (userChoice == 'y') {
                 System.out.println("Restarting...");
