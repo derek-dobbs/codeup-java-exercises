@@ -2,8 +2,11 @@ public class StringExercise {
     public static void main(String[] args) {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         String message = "We don't need no education";
-        System.out.println(message);
-        System.out.println(message.replace("education", "thought control"));
+//        System.out.println(message);
+//        System.out.println(message.replace("education", "thought control"));
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        String message2 = "Check \"this\" out!,\"s inside of \"s!";
+//        System.out.println(message2);
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
