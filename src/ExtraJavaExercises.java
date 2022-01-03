@@ -1,11 +1,22 @@
+import java.util.Scanner;
+
 public class ExtraJavaExercises {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         //1. Write a program in Java to read 10 numbers from keyboard and find their sum and average
         //
         //Expected Output :
         //The sum of 10 numbers is : 55
         //The Average is : 5.500000
+        float sum = 0f;
 
+        for (int i = 1; i < 11; i++) {
+            System.out.printf("Enter number %d: ", i);
+            sum += scanner.nextFloat();
+        }
+
+        System.out.printf("The sum of the numbers is: %.2f and the average is: %.2f.", sum, sum/10);
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //2. Write a program in Java to display the cube of the number upto given an integer. Read the number using the Scanner class.
         //
