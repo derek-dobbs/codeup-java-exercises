@@ -16,17 +16,17 @@ public class ControlFlowExercises {
 //        int j = 100;
 //        do {
 //            if(j % 5 == 0) {
-////                System.out.println(j);
+//                System.out.println(j);
 //            }
 //            j--;
 //        }while(j >= -10);
-
-        for (int i = 100; i >= -10;) {
-            if(i % 5 == 0) {
-//                System.out.println(i);
-            }
-            i--;
-        }
+//
+//        for (int i = 100; i >= -10;) {
+//            if(i % 5 == 0) {
+////                System.out.println(i);
+//            }
+//            i--;
+//        }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //        long l = 2;
 //        do {
@@ -34,10 +34,10 @@ public class ControlFlowExercises {
 //            l *= l;
 //        }while (l < 1000000);
 
-        for (long i = 2; i < 1000000;) {
+//        for (long i = 2; i < 1000000;) {
 //            System.out.println(i);
-            i *= i;
-        }
+//            i *= i;
+//        }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         for (int i = 1; i <= 100 ; i++) {
             if (i % 3 == 0 && i % 5 ==0) {
