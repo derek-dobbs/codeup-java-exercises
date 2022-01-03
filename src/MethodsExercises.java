@@ -1,0 +1,56 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Scanner;
+
+public class MethodsExercises {
+
+    public static double addNumbers (double num1, double num2) {
+        return num1 + num2;
+    }
+
+    public static double subtractNumbers (double num1, double num2) {
+        return num1 - num2;
+    }
+
+    public static double multiplyNumbers (double num1, double num2) {
+        return num1 * num2;
+//        for(int i = 1; i < num2; i++) {
+//            System.out.println(num1);
+//            num1 += num1;
+//        }
+//        return num1;
+        //not getting correct output when using loop
+    }
+
+    public static double divideNumbers (double num1, double num2) {
+        if(num1 == 0 || num2 == 0) {
+            System.out.println("Cannot divide by zero!");
+            return 0;
+        }
+        return num1 / num2;
+    }
+
+    public static double modulusNumbers (double num1, double num2) {
+        return num1 % num2;
+    }
+
+    public static int getInteger(int min, int max) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number between 1 and 10: ");
+        int number = scanner.nextInt();
+
+        if (number >= min && number <= max ) {
+            System.out.println("Number is in range!");
+        }
+
+        int userInput = getInteger(1, 10);
+    }
+
+    public static void main(String[] args) {
+//        System.out.println(addNumbers(4, 2));
+//        System.out.println(subtractNumbers(4, 2));
+//        System.out.println(multiplyNumbers(5, 5));
+//        System.out.println(divideNumbers(4, 0));
+//        System.out.println(modulusNumbers(4, 2));
+    }
+}
