@@ -5,8 +5,8 @@ public class Warmups {
     //Add, commit, and push your work to GitHub.
 
     public static String startDay() {
-        String message = "Brain loading... Done!";
-        return message;
+//        String message = "Brain loading... Done!";
+        return "Brain loading... Done!";
     }
 
     public static void main(String[] args) {
