@@ -51,7 +51,7 @@ public class MethodsExercises {
 
     public static void showFactoral () {
         int num = getInteger(1, 10);
-        int result = 1;
+        long result = 1;
         for (int i = 1; i <= num; i++) {
             result *= i;
             System.out.println(i + "! = " + result);
@@ -67,7 +67,7 @@ public class MethodsExercises {
         }else {
             System.out.println("Exiting...");
         }
-        return;
+        System.exit(0);
     }
 
     public static void main(String[] args) {
