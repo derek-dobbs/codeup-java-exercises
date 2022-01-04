@@ -47,13 +47,24 @@ public class MethodsExercises {
         return number;
     }
 
+    public static void showFactoral () {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        String num = scanner.nextLine();
+
+        String message = num + "! = " + num + "\t= " + num;
+
+        System.out.println(message);
+    }
+
     public static void main(String[] args) {
 //        System.out.println(addNumbers(4, 2));
 //        System.out.println(subtractNumbers(4, 2));
 //        System.out.println(multiplyNumbers(5, 5));
 //        System.out.println(divideNumbers(4, 0));
 //        System.out.println(modulusNumbers(4, 2));
-        int userInput = getInteger(1, 10);
-        System.out.println(userInput);
-    }
-}
+//        int userInput = getInteger(1, 10);
+//        System.out.println(userInput);
+        showFactoral();
+    }//end main
+}//end class
