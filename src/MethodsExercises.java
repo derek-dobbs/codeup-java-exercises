@@ -1,5 +1,6 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -55,6 +56,18 @@ public class MethodsExercises {
             result *= i;
             System.out.println(i + "! = " + result);
         }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like to enter another number?");
+        System.out.println("Press \'Y\' to continue or any other key to exit.");
+        String confirmation = scanner.next().toLowerCase();
+
+        if (confirmation.equals("y")) {
+            showFactoral();
+        }else {
+            System.out.println("Exiting...");
+        }
+        return;
     }
 
     public static void main(String[] args) {
