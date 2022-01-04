@@ -2,6 +2,7 @@ import org.w3c.dom.ls.LSOutput;
 
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.Random;
 
 public class MethodsExercises {
 
@@ -69,6 +70,45 @@ public class MethodsExercises {
         }
         System.exit(0);
     }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Create an application that simulates dice rolling.
+    public static void rollDice () {
+        //Ask the user to enter the number of sides for a pair of dice.
+        System.out.println("Welcome to Dice Roller!");
+        System.out.print("Enter the number of sides for each die: ");
+        Scanner scanner = new Scanner(System.in);
+        int sides = scanner.nextInt();
+        boolean goAgain = true;
+
+        while (goAgain) {
+            //Prompt the user to roll the dice.
+            System.out.println("Press \'R\' to roll the dice or any other key to exit.");
+            String response = scanner.next().toLowerCase();
+
+            if (response.equals("r")) {
+                Random rand = new Random();
+                Random rand2 = new Random();
+                int die1 = rand.nextInt(sides);
+                die1 += 1;
+                int die2 = rand.nextInt(sides);
+                die2 += 1;
+                System.out.printf("Die 1: %d, Die 2: %d", die1, die2);
+            }else {
+                System.out.println("Exiting...");
+                System.exit(0);
+            }
+            System.out.println("\nWould you like to roll again?");
+            System.out.print("Press \'Y\' to continue or any other key to exit. ");
+            String rollAgainResponse = scanner.next().toLowerCase();
+
+            if (rollAgainResponse.equals("y")) {
+                goAgain = true;
+            }else {
+                goAgain = false;
+            }
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static void main(String[] args) {
 //        System.out.println(addNumbers(4, 2));
@@ -76,6 +116,7 @@ public class MethodsExercises {
 //        System.out.println(multiplyNumbers(5, 5));
 //        System.out.println(divideNumbers(4, 0));
 //        System.out.println(modulusNumbers(4, 2));
-        showFactoral(); // not working correctly, see comments on line 37
+//        showFactoral(); // not working correctly, see comments on line 37
+        rollDice();
     }//end main
 }//end class
