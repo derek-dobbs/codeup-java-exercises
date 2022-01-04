@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Warmups {
-
+    //January 4, 2022
     //Create a method called “startDay” that returns a string with the value of “Brain loading… Done!”. Execute your program and print the output to the console.
     //Add, commit, and push your work to GitHub.
 
@@ -20,6 +20,7 @@ public class Warmups {
 //
 //        System.out.printf("You ate %s for breakfast today", userInput);
 
+        //January 4, 2022
         System.out.println(startDay());
     }// end main
 }//end class
