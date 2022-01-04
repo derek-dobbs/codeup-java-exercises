@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class MethodsExercises {
+    public static Scanner scanner = new Scanner(System.in);
 
     public static double addNumbers (double num1, double num2) {
         return num1 + num2;
@@ -36,16 +37,13 @@ public class MethodsExercises {
         return num1 % num2;
     }
 
-    public static int getInteger(int min, int max) { //The method returns the correct value if entered the first time correctly. If re-prompted and then a correct value is entered, it returns the previous value entered
-        Scanner scanner = new Scanner(System.in);
+    public static int getInteger(int min, int max) {
         System.out.printf("Enter a number between %d and %d: ", min, max);
         int number = scanner.nextInt();
 
         if (number < min || number > max ) {
             System.out.println("Number is out of range. Try again");
-//            number = 999;
-            scanner.reset();
-            getInteger(min, max);
+            return getInteger(min, max);
         }
         return number;
     }
@@ -58,7 +56,6 @@ public class MethodsExercises {
             System.out.println(i + "! = " + result);
         }
 
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Would you like to enter another number?");
         System.out.println("Press \'Y\' to continue or any other key to exit.");
         String confirmation = scanner.next().toLowerCase();
@@ -116,7 +113,7 @@ public class MethodsExercises {
 //        System.out.println(multiplyNumbers(5, 5));
 //        System.out.println(divideNumbers(4, 0));
 //        System.out.println(modulusNumbers(4, 2));
-//        showFactoral(); // not working correctly, see comments on line 37
+//        showFactoral();
 //        rollDice();
     }//end main
 }//end class
