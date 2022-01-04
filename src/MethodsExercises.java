@@ -117,6 +117,6 @@ public class MethodsExercises {
 //        System.out.println(divideNumbers(4, 0));
 //        System.out.println(modulusNumbers(4, 2));
 //        showFactoral(); // not working correctly, see comments on line 37
-        rollDice();
+//        rollDice();
     }//end main
 }//end class
