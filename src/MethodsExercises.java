@@ -34,36 +34,27 @@ public class MethodsExercises {
         return num1 % num2;
     }
 
-    public static int getInteger(int min, int max) {     //unclear on how to do exercise according to directions
+    public static int getInteger(int min, int max) { //The method returns the correct value if entered the first time correctly. If re-prompted and then a correct value is entered, it returns the previous value entered
         Scanner scanner = new Scanner(System.in);
         System.out.printf("Enter a number between %d and %d: ", min, max);
         int number = scanner.nextInt();
 
         if (number < min || number > max ) {
             System.out.println("Number is out of range. Try again");
+//            number = 999;
+            scanner.reset();
             getInteger(min, max);
         }
-        System.out.print("The number you entered was: ");
         return number;
     }
 
     public static void showFactoral () {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        String num = scanner.nextLine();
-
-        String message = num + "! = " + num + "\t= " + num;
-
-        System.out.println(message);
-
-        //////////
-        int number = 5;
+        int num = getInteger(1, 10);
         int result = 1;
-        for (int i = 1; i <= number ; i++) {
+        for (int i = 1; i <= num; i++) {
             result *= i;
-            System.out.println(result);
+            System.out.println(i + "! = " + result);
         }
-        //////////
     }
 
     public static void main(String[] args) {
@@ -72,8 +63,6 @@ public class MethodsExercises {
 //        System.out.println(multiplyNumbers(5, 5));
 //        System.out.println(divideNumbers(4, 0));
 //        System.out.println(modulusNumbers(4, 2));
-//        int userInput = getInteger(1, 10);
-//        System.out.println(userInput);
-        showFactoral();
+        showFactoral(); // not working correctly, see comments on line 37
     }//end main
 }//end class
