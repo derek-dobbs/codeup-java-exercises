@@ -21,15 +21,25 @@ public class HighLow {
     public static void guessingGame () {
         boolean playAgain = true;
 
-        Random rand = new Random();
-        int randomNumber = rand.nextInt(100);
-        randomNumber += 1;
-
         while (playAgain) {
-            System.out.print("Enter a number between 1 and 100: ");
-            int userNumber = scanner.nextInt();
+            Random rand = new Random();
+            int randomNumber = rand.nextInt(100);
+            randomNumber += 1;
 
-            //if userNumber is greater than random number say lower, higher, match, etc.
+            boolean notMatch = true;
+
+            while (notMatch) {
+                System.out.print("Enter a number between 1 and 100: ");
+                int userNumber = scanner.nextInt();
+                if (randomNumber > userNumber) {
+                    System.out.println("HIGHER");
+                }else if (randomNumber < userNumber) {
+                    System.out.println("LOWER");
+                }else {
+                    System.out.println("GOOD GUESS!");
+                    notMatch = false;
+                }
+            }
 
             System.out.println("Would you like to play again?");
             System.out.print("Press \'Y\' to continue or any other key to exit. ");
