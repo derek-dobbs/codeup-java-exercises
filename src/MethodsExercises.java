@@ -34,16 +34,17 @@ public class MethodsExercises {
         return num1 % num2;
     }
 
-    public static int getInteger(int min, int max) {
+    public static int getInteger(int min, int max) {     //unclear on how to do exercise according to directions
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number between 1 and 10: ");
+        System.out.printf("Enter a number between %d and %d: ", min, max);
         int number = scanner.nextInt();
 
-        if (number >= min && number <= max ) {
-            System.out.println("Number is in range!");
+        if (number < min || number > max ) {
+            System.out.println("Number is out of range. Try again");
+            getInteger(min, max);
         }
-
-        int userInput = getInteger(1, 10);
+        System.out.print("The number you entered was: ");
+        return number;
     }
 
     public static void main(String[] args) {
@@ -52,5 +53,7 @@ public class MethodsExercises {
 //        System.out.println(multiplyNumbers(5, 5));
 //        System.out.println(divideNumbers(4, 0));
 //        System.out.println(modulusNumbers(4, 2));
+        int userInput = getInteger(1, 10);
+        System.out.println(userInput);
     }
 }
