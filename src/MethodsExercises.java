@@ -23,6 +23,8 @@ public class MethodsExercises {
 //        }
 //        return num1;
         //not getting correct output when using loop
+
+        
     }
 
     public static double divideNumbers (double num1, double num2) {

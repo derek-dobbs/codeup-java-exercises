@@ -21,6 +21,28 @@ public class Warmups {
 //        System.out.printf("You ate %s for breakfast today", userInput);
 
         //January 4, 2022
-        System.out.println(startDay());
+//        System.out.println(startDay());
+
+        //Warmup
+        //Create a class named “Penguin”
+        //Give your class the following private fields
+        //Name
+        //Weight
+        //Species
+        //Sex
+        //Give your class the following public methods
+        //getName
+        //getWeight
+        //getSpecies
+        //getSex
+        //setName
+        //setWeight
+        //setSpecies
+        //setSex
+        //Give your class a constructor method
+        //Give your class the following public static methods
+        //canFly (returns false)
+        //areEvil (returns true) [Source]
+
     }// end main
 }//end class
