@@ -4,7 +4,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scanner;
+    private Scanner scanner = new Scanner(System.in);
 
     public Input () {
 
@@ -14,16 +14,21 @@ public class Input {
         return scanner;
     }
 
-    public Scanner setScanner(Scanner scanner) {
-        return scanner = new Scanner(System.in);
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 
-    public String getString(String string) {
-        return string;
+    public String getString() {
+        System.out.println("Please enter a value: ");
+        String userInput = scanner.nextLine();
+        System.out.printf("You have entered %s%n", userInput);
+        return userInput;
     }
 
-    public static boolean yesNo(String input) {
-        if (input.toLowerCase().equals("Y") || input.toLowerCase().equals("y") || input.toLowerCase().equals("Yes") || input.toLowerCase().equals("yes")) {
+    public boolean yesNo() {
+        System.out.println("Would you like to continue? ");
+        String response = scanner.nextLine();
+        if (response.toLowerCase().equals("Y") || response.toLowerCase().equals("y") || response.toLowerCase().equals("Yes") || response.toLowerCase().equals("yes")) {
             return true;
         }else {
             return false;
@@ -57,13 +62,13 @@ public class Input {
 //
 //    }
 
-    public static class InputTest {
-        public static void main(String[] args) {
-//            System.out.println(yesNo("y"));
-            System.out.println(getInt(1, 10));
-        }// end psvm
-
-    }//end class InputTest
+//    public static class InputTest {
+//        public static void main(String[] args) {
+////            System.out.println(yesNo("y"));
+////            System.out.println(getInt(1, 10));
+//        }// end psvm
+//
+//    }//end class InputTest
 }//end class Input
 
 
