@@ -28,7 +28,7 @@ public class Person {
         Person derek = new Person();
         derek.name = "Derek";
 //        derek.setName("Steve");
-//        System.out.println(derek.sayHello());
+        System.out.println(derek.sayHello());
 
 //        Person person1 = new Person("John");
 //        Person person2 = new Person("John");

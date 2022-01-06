@@ -8,7 +8,7 @@ public class Warmups {
 //        String message = "Brain loading... Done!";
         return "Brain loading... Done!";
     }
-
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         //December 15, 2021
 //        System.out.println("Java is statically typed, while Javascript is dynamically typed.");
@@ -22,27 +22,8 @@ public class Warmups {
 
         //January 4, 2022
 //        System.out.println(startDay());
-
-        //Warmup
-        //Create a class named “Penguin”
-        //Give your class the following private fields
-        //Name
-        //Weight
-        //Species
-        //Sex
-        //Give your class the following public methods
-        //getName
-        //getWeight
-        //getSpecies
-        //getSex
-        //setName
-        //setWeight
-        //setSpecies
-        //setSex
-        //Give your class a constructor method
-        //Give your class the following public static methods
-        //canFly (returns false)
-        //areEvil (returns true) [Source]
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //January 6, 2022
 
     }// end main
 }//end class
