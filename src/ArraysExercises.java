@@ -8,5 +8,15 @@ public class ArraysExercises {
         String x = Arrays.toString(numbers);
 //        System.out.println(x);
 
+        //TODONE:Create an array that holds 3 Person objects. Assign a new instance of the Person class to each element. Iterate through the array and print out the name of each person in the array.
+        Person [] persons = new Person[3];
+        persons[0] = new Person("Moe");
+        persons[1] = new Person("Larry");
+        persons[2] = new Person("Curly");
+
+        for (Person person: persons) {
+            System.out.println(person.toString());
+        }
+
     }//end psvm
 }//end class ArraysExercises

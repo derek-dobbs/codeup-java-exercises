@@ -1,12 +1,22 @@
+import java.util.Arrays;
+
 public class Person {
     private String name;
+
+    @Override
+    public String toString() {
+//        return "Person{" +
+//                "name='" + name + '\'' +
+//                '}';
+        return name;
+    }
 
     public Person() {
 
     }
 
-    public Person(String name) {
-        this.name = name;
+    public Person (String name) {
+       this.name = name;
     }
 
     public String getName(){
