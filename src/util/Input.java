@@ -25,7 +25,7 @@ public class Input {
         return userInput;
     }
 
-    public boolean yesNo() {
+    public boolean yesNo(String s) {
         System.out.println("Would you like to continue? ");
         String response = scanner.nextLine();
         if (response.toLowerCase().equals("Y") || response.toLowerCase().equals("y") || response.toLowerCase().equals("Yes") || response.toLowerCase().equals("yes")) {
@@ -35,7 +35,7 @@ public class Input {
         }
     }
 
-    public static int getInt(int min, int max) {
+    public int getInt(int min, int max) {
         boolean outOfRange = true;
 //        Scanner sc = setScanner();
         Scanner sc = new Scanner(System.in);
@@ -49,17 +49,31 @@ public class Input {
         }while (outOfRange);
         return userInput;
     }
-//
-//    public int getInt() {
-//
-//    }
-//
-//    public double getDouble (double min, double max) {
-//
-//    }
-//
-//    public double getDouble () {
-//
+
+    public int getInt() {
+        System.out.print("Please enter an integer: ");
+        int userInt = scanner.nextInt();
+        System.out.printf("You entered %d", userInt);
+        return userInt;
+    }
+
+    public double getDouble (double min, double max) {
+        System.out.printf("Enter a number between %d and %d. ", min, max);
+        double userDouble = scanner.nextDouble();
+        if (userDouble < min || userDouble > max) {
+            return getDouble(min, max);
+        }
+        return userDouble;
+    }
+
+    public double getDouble () {
+        System.out.print("Please enter a number: ");
+        double userDouble = scanner.nextDouble();
+        System.out.printf("You entered: %f", userDouble);
+        return userDouble;
+    }
+
+//    public double getDouble(String s) {
 //    }
 
 //    public static class InputTest {
