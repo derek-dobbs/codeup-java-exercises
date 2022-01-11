@@ -34,9 +34,6 @@ public class Student {
         this.grades = grades;
     }
 
-//    // returns the student's name
-//    public String getName();      ////don't need this, already have one
-
     // adds the given grade to the grades property
     public void addGrade(int grade) {
         this.grades.add(grade);
@@ -44,17 +41,21 @@ public class Student {
 //
     // returns the average of the students grades
     public int getGradeAverage(ArrayList<Integer> grades) {
-
+        int sum = 0;
+        for (int i = 0; i < grades.size(); i++) {
+            sum += grades.get(i);
+        }
+        return sum / grades.size();
     }
 
     public static void main(String[] args) {
         Student derek = new Student("Derek");
 //        System.out.println(derek.getName());
-//        derek.addGrade(100);
-//        derek.addGrade(95);
-//        derek.addGrade(80);
+        derek.addGrade(98);
+        derek.addGrade(95);
+        derek.addGrade(83);
 //        System.out.println(derek.getGrades());
-        System.out.println(derek.getGradeAverage());
+//        System.out.println(derek.getGradeAverage(derek.getGrades()));
 
     }
 }
