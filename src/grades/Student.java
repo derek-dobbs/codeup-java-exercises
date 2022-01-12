@@ -4,6 +4,24 @@ import java.util.ArrayList;
 
 public class Student {
     private String name;
+    private String gitHubUserName;
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public Student(String name, String gitHubUserName) {
+        this.name = name;
+        this.gitHubUserName = gitHubUserName;
+    }
+
+    public String getGitHubUserName() {
+        return gitHubUserName;
+    }
+
+    public void setGitHubUserName(String gitHubUserName) {
+        this.gitHubUserName = gitHubUserName;
+    }
 
     //The grades property should be an ArrayList of integers.
     ArrayList<Integer> grades = new ArrayList<>();
@@ -12,10 +30,6 @@ public class Student {
     public Student(String name, ArrayList<Integer> grades) {
         this.name = name;
         this.grades = grades;
-    }
-
-    public Student(String name) {
-        this.name = name;
     }
 
     public String getName() {
@@ -36,7 +50,7 @@ public class Student {
 
     // adds the given grade to the grades property
     public void addGrade(int grade) {
-        this.grades.add(grade);
+        grades.add(grade);
     }
 //
     // returns the average of the students grades
@@ -54,7 +68,7 @@ public class Student {
         derek.addGrade(98);
         derek.addGrade(95);
         derek.addGrade(83);
-//        System.out.println(derek.getGrades());
+        System.out.println(derek.getGrades());
 //        System.out.println(derek.getGradeAverage(derek.getGrades()));
 
     }
