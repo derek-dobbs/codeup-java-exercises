@@ -25,8 +25,9 @@ public class Input {
         return userInput;
     }
 
-    public boolean yesNo(String s) {
-        System.out.println("Would you like to continue? ");
+    public static boolean yesNo(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(prompt);
         String response = scanner.nextLine();
         if (response.toLowerCase().equals("Y") || response.toLowerCase().equals("y") || response.toLowerCase().equals("Yes") || response.toLowerCase().equals("yes")) {
             return true;
