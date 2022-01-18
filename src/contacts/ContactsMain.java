@@ -11,11 +11,13 @@ public class ContactsMain {
         do {
             // Main menu
             System.out.println("Welcome! What would you like to do?" +
+                    "\n////////////////////////////////" +
                     "\n1. View contacts" +
                     "\n2. Add a new contact" +
                     "\n3. Search a contact by name" +
                     "\n4. Delete an existing contact" +
-                    "\n5. Exit");
+                    "\n5. Exit" +
+                    "\n////////////////////////////////");
             System.out.print("Enter an option: ");
 
             int userMenuOption = scanner.nextInt();
@@ -29,8 +31,18 @@ public class ContactsMain {
                     break;
                 case 2:
 //                System.out.println("You entered: 2");
-                    invalidEntry = false;
                     // Add a new contact
+                    System.out.print("Enter the contact's name: ");
+                    String userContactName = scanner.nextLine();
+                    System.out.println();
+
+                    System.out.print("Enter the contact's phone number: (numbers only, no characters or spaces): ");
+                    String userContactPhoneNumber = scanner.nextLine();
+
+                    //TODO: figure out how to enter input for the contact's name, then move to a new line to enter the contact's phone number. Presently, I am unable to ener the contact name and can only enter the contact number.
+
+                    System.out.println("Contact name: " + userContactName + "\nContact phone number: " + userContactPhoneNumber);
+                    invalidEntry = false;
                     break;
                 case 3:
 //                System.out.println("You entered: 3");
@@ -53,6 +65,6 @@ public class ContactsMain {
 
         }while (invalidEntry);
 
-//        System.out.println("Exited do while loop");
+        System.out.println("Exited do while loop");
     }// end psvm
 }// end class ContactsMain
