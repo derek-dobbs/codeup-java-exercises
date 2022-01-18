@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ContactsMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter("\n");
 
         boolean invalidEntry = true;
 
@@ -33,13 +34,13 @@ public class ContactsMain {
 //                System.out.println("You entered: 2");
                     // Add a new contact
                     System.out.print("Enter the contact's name: ");
-                    String userContactName = scanner.nextLine();
-                    System.out.println();
+                    String userContactName = scanner.next();
+//                    System.out.println();
 
                     System.out.print("Enter the contact's phone number: (numbers only, no characters or spaces): ");
-                    String userContactPhoneNumber = scanner.nextLine();
+                    String userContactPhoneNumber = scanner.next();
 
-                    //TODO: figure out how to enter input for the contact's name, then move to a new line to enter the contact's phone number. Presently, I am unable to ener the contact name and can only enter the contact number.
+                    //TODONE: figure out how to enter input for the contact's name, then move to a new line to enter the contact's phone number. Presently, I am unable to ener the contact name and can only enter the contact number. *Fixed with adding use delimter to scanner and changing scanner.nextline() to scanner.next().
 
                     System.out.println("Contact name: " + userContactName + "\nContact phone number: " + userContactPhoneNumber);
                     invalidEntry = false;
