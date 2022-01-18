@@ -21,7 +21,7 @@ public class ContactsMain {
     public static void displayContacts() {
         try {
             List<String> contacts = Files.readAllLines(dataFile);
-            Files.write(dataFile, contacts);
+
             for (String contact : contacts) {
                 System.out.println(contact);
             }
@@ -51,8 +51,6 @@ public class ContactsMain {
             }
 
             if (Files.exists(dataFile)) {
-                Files.write(dataFile, Arrays.asList("Name | Phone number"));
-                Files.write(dataFile, Arrays.asList("---------------"), StandardOpenOption.APPEND);
                 Files.write(dataFile, Arrays.asList(nameAndNumber), StandardOpenOption.APPEND);
             }
         }catch (IOException e) {
@@ -74,6 +72,13 @@ public class ContactsMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
+
+        try {
+            Files.write(dataFile, Arrays.asList("Name | Phone number"));
+            Files.write(dataFile, Arrays.asList("---------------"), StandardOpenOption.APPEND);
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
 
         while (startOver) {
             do {

@@ -1,3 +1,5 @@
 Name | Phone number
 ---------------
-joe | 123
+a | 1
+b | 2
+c | 3
