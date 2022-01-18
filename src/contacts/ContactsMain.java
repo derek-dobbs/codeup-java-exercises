@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ContactsMain {
+    public static Scanner scanner = new Scanner(System.in);
+
     public static String directory = "contacts-data";
     public static String filename = "contacts.txt";
     public static boolean invalidEntry = true;
@@ -18,9 +20,19 @@ public class ContactsMain {
     public static Path dataDirectory = Paths.get(directory);
     public static Path dataFile = Paths.get(directory, filename);
 
+    public static List<String> contacts;
+
+    static {
+        try {
+            contacts = Files.readAllLines(dataFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void displayContacts() {
         try {
-            List<String> contacts = Files.readAllLines(dataFile);
+            contacts = Files.readAllLines(dataFile);
 
             for (String contact : contacts) {
                 System.out.println(contact);
@@ -31,7 +43,7 @@ public class ContactsMain {
     }//end displayContacts()
 
     public static void addContact() {
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
         System.out.print("Enter the contact's name: ");
         String userContactName = scanner.next();
@@ -63,16 +75,23 @@ public class ContactsMain {
     }// end searchContact()
 
     public static void  deleteContact() {
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         System.out.print("What contact would you like to delete? ");
         String userContactToDelete = scanner.next();
-        System.out.printf("//TEST: You deleted: %s", userContactToDelete);
-    }
+//        System.out.printf("//TEST: You deleted: %s", userContactToDelete);
+
+        try {
+            contacts = Files.readAllLines(dataFile);
+            contacts.remove(userContactToDelete);
+            Files.write(dataFile, contacts);
+            System.out.println("Deletion complete");
+        }catch (IOException e) {
+            System.out.println("Error occurred with deleting contact");
+            e.printStackTrace();
+        }
+    }// end deleteContact()
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter("\n");
-
         try {
             Files.write(dataFile, Arrays.asList("Name | Phone number"));
             Files.write(dataFile, Arrays.asList("---------------"), StandardOpenOption.APPEND);
