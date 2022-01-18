@@ -1,4 +1,5 @@
 Name | Phone number
 ---------------
-a | 1
-b | 2
+ contact one	| 1234567 
+ contact two	| 9876543
+ contact one	| 1234567 

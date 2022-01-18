@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,6 +22,8 @@ public class ContactsMain {
     public static Path dataFile = Paths.get(directory, filename);
 
     public static List<String> contacts;
+
+    public static HashMap<String, String> contactsMap = new HashMap<>();
 
     static {
         try {
@@ -51,7 +54,18 @@ public class ContactsMain {
         System.out.print("Enter the contact's phone number: (numbers only, no characters or spaces): ");
         String userContactPhoneNumber = scanner.next();
 
-        String nameAndNumber = String.format("%s | %s", userContactName, userContactPhoneNumber);
+//        String nameAndNumber = String.format("%s | %s", userContactName, userContactPhoneNumber);
+
+        contactsMap.put(userContactName, userContactPhoneNumber);
+
+                    String contactsString = contactsMap.toString();
+            contactsString =  contactsString
+                    .replace('{', ' ')
+                    .replace('}', ' ')
+                    .replace("=", "\t| ")
+                    .replace(",", "\n");
+
+//            System.out.println(contactsString);
 
         try {
             if (Files.notExists(dataDirectory)) {
@@ -63,7 +77,7 @@ public class ContactsMain {
             }
 
             if (Files.exists(dataFile)) {
-                Files.write(dataFile, Arrays.asList(nameAndNumber), StandardOpenOption.APPEND);
+                Files.write(dataFile, Arrays.asList(contactsString), StandardOpenOption.APPEND);
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -112,30 +126,30 @@ public class ContactsMain {
                         "\n////////////////////////////////");
                 System.out.print("Enter an option: ");
 
-                int userMenuOption = scanner.nextInt();
+                String userMenuOption = scanner.next();
 
                 switch (userMenuOption) {
-                    case 1:
+                    case "1":
                         // Display all contacts
                         displayContacts();
                         invalidEntry = false;
                         break;
-                    case 2:
+                    case "2":
                         // Add a new contact
                         addContact();
                         invalidEntry = false;
                         break;
-                    case 3:
+                    case "3":
                         // Search contact by name
                         searchContact();
                         invalidEntry = false;
                         break;
-                    case 4:
+                    case "4":
                         // Delete an existing contact
                         deleteContact();
                         invalidEntry = false;
                         break;
-                    case 5:
+                    case "5":
                         // Exit the program
                         System.out.println("Exiting...");
                         System.exit(0);
