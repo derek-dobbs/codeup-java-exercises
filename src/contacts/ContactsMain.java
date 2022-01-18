@@ -1,11 +1,24 @@
 package contacts;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ContactsMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
+
+        String directory = "contacts-data";
+        String filename = "contacts.txt";
+
+        Path dataDirectory = Paths.get(directory);
+        Path dataFile = Paths.get(directory, filename);
 
         boolean invalidEntry = true;
 
@@ -29,6 +42,16 @@ public class ContactsMain {
 //                System.out.println("You entered: 1");
                 invalidEntry = false;
                     // Display all contacts
+
+                    try {
+                        List<String> contacts = Files.readAllLines(dataFile);
+                        for (String contact : contacts) {
+                            System.out.println(contact);
+                        }
+                    }catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                     break;
                 case 2:
 //                System.out.println("You entered: 2");
@@ -40,9 +63,35 @@ public class ContactsMain {
                     System.out.print("Enter the contact's phone number: (numbers only, no characters or spaces): ");
                     String userContactPhoneNumber = scanner.next();
 
+                    String nameAndNumber = String.format("%s | %s", userContactName, userContactPhoneNumber);
+                    //Jack Blank | 1231231234
+
                     //TODONE: figure out how to enter input for the contact's name, then move to a new line to enter the contact's phone number. Presently, I am unable to ener the contact name and can only enter the contact number. *Fixed with adding use delimter to scanner and changing scanner.nextline() to scanner.next().
 
-                    System.out.println("Contact name: " + userContactName + "\nContact phone number: " + userContactPhoneNumber);
+//                    System.out.println("Contact name: " + userContactName + "\nContact phone number: " + userContactPhoneNumber);
+                    try {
+                        if (Files.notExists(dataDirectory)) {
+                            Files.createDirectory(dataDirectory);
+                        }
+
+                        if (!Files.exists(dataFile)) {
+                            Files.createFile(dataFile);
+                        }
+
+                        if (Files.exists(dataFile)) {
+                            // Name | Phone number
+                            //---------------
+                            Files.write(dataFile, Arrays.asList("Name | Phone number"));
+                            Files.write(dataFile, Arrays.asList("---------------"), StandardOpenOption.APPEND);
+                            Files.write(dataFile, Arrays.asList(nameAndNumber), StandardOpenOption.APPEND);
+//                            Files.write(dataFile, Arrays.asList(//put variable here that combines name and phone number));
+                            // format: Jack Blank | 1231231234
+                        }
+                    }catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
                     invalidEntry = false;
                     break;
                 case 3:
@@ -66,6 +115,6 @@ public class ContactsMain {
 
         }while (invalidEntry);
 
-        System.out.println("Exited do while loop");
+//        System.out.println("Exited do while loop");
     }// end psvm
 }// end class ContactsMain
