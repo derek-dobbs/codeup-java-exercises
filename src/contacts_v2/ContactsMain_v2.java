@@ -78,9 +78,6 @@ public class ContactsMain_v2 extends Contact{
 //        System.out.println(contactToString);
 
         contacts.add(contact);
-
-        System.out.println(contacts);
-
     }// end addContact()
 
     public static void searchContact() {
@@ -98,6 +95,17 @@ public class ContactsMain_v2 extends Contact{
 //        searchContact();
 //        deleteContact();
 //        mainMenu();
+//        addContact();
+//        System.out.println(contacts);
+//        addContact();
+//        System.out.println(contacts);
+        Contact c1 = new Contact("person1First", "person1Last", 1234567);
+        Contact c2 = new Contact("person2First", "person2Last", 1234567);
+        Contact c3 = new Contact("person3First", "person3Last", 1234567);
+        contacts.add(c1);
+        contacts.add(c2);
+        contacts.add(c3);
 
+        System.out.println(contacts);
     }// end psvm
 }//end class ContactsMain_v2
