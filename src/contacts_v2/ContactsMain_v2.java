@@ -17,11 +17,11 @@ public class ContactsMain_v2 extends Contact{
     static Path dataDirectory = Paths.get(directory);
     static Path dataFile = Paths.get(directory, filename);
 
-
-
     public static Scanner scanner = new Scanner(System.in);
 
     public static ArrayList<String> contacts = new ArrayList<>();
+
+    public static List<String> contactsList;
 
     public ContactsMain_v2(String contactFirstName, String contactLastName, int contactPhoneNumber) {
         super(contactFirstName, contactLastName, contactPhoneNumber);
@@ -35,7 +35,7 @@ public class ContactsMain_v2 extends Contact{
             System.out.println("--------------------------" +
                     "\n1. View contacts" +
                     "\n2. Add a new contact" +
-                    "\n3. Search a contact by name" +
+                    "\n3. Search for a contact" +
                     "\n4. Delete an existing contact" +
                     "\n5. Exit" +
                     "\n--------------------------");
@@ -70,7 +70,7 @@ public class ContactsMain_v2 extends Contact{
 
     public static void showContacts() {
         try {
-            List<String> contactsList = Files.readAllLines(dataFile);
+            contactsList = Files.readAllLines(dataFile);
             for(String contact : contactsList) {
                 System.out.println(contact);
             }
@@ -101,21 +101,13 @@ public class ContactsMain_v2 extends Contact{
         contacts.add(contactString);
 
         try {
-            // Files class - contains static methods to read, write, create, and delete files.
-            // .exists(Path filepath) - checks whether or not the file exists.
-            // .notExists(Path filepath)
             if(Files.notExists(dataDirectory)) {
-                // create a new directory if the file does not exist.
-                // .createDirectory(Path filepath)
-                // .createDirectories(Path filepath)
                 Files.createDirectory(dataDirectory);
             }
 
             if(!Files.exists(dataFile)) {
-                // .createFile(Path filepath)
                 Files.createFile(dataFile);
             }
-
 
             if(Files.exists(dataFile)) {
                 Files.write(dataFile, Arrays.asList(contactString), StandardOpenOption.APPEND);
@@ -128,7 +120,20 @@ public class ContactsMain_v2 extends Contact{
     }// end addContact()
 
     public static void searchContact() {
-        System.out.println("test searchContact");
+        scanner.useDelimiter("\n");
+
+        System.out.print("Enter search term: ");
+        String userSearchTerm = scanner.next();
+
+        System.out.println("You entered: " + userSearchTerm);
+
+        System.out.println("Search results: ");
+
+        for (String contact : contactsList) {
+            if (contact.contains(userSearchTerm)) {
+                System.out.println(contact);
+            }
+        }
         mainMenu();
     }
 
