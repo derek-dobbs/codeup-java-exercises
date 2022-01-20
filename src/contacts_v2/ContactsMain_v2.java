@@ -1,12 +1,27 @@
 package contacts_v2;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ContactsMain_v2 extends Contact{
+    protected static String directory = "contacts_data_v2";
+    protected static String filename = "contacts_v2.txt";
+
+    static Path dataDirectory = Paths.get(directory);
+    static Path dataFile = Paths.get(directory, filename);
+
+
+
     public static Scanner scanner = new Scanner(System.in);
 
-    public static ArrayList<Contact> contacts = new ArrayList<>();
+    public static ArrayList<String> contacts = new ArrayList<>();
 
     public ContactsMain_v2(String contactFirstName, String contactLastName, int contactPhoneNumber) {
         super(contactFirstName, contactLastName, contactPhoneNumber);
@@ -14,8 +29,8 @@ public class ContactsMain_v2 extends Contact{
 
     public static void mainMenu() {
         scanner.useDelimiter("\n");
-        boolean validEntry = true;
 
+        boolean validEntry = true;
         do {
             System.out.println("--------------------------" +
                     "\n1. View contacts" +
@@ -54,11 +69,20 @@ public class ContactsMain_v2 extends Contact{
     }// end mainMenu()
 
     public static void showContacts() {
-        System.out.println("Test showContacts()");
-    }
+        try {
+            List<String> contactsList = Files.readAllLines(dataFile);
+            for(String contact : contactsList) {
+                System.out.println(contact);
+            }
+
+            Files.write(dataFile, contactsList);
+        } catch(IOException iox) {
+            iox.printStackTrace();
+        }
+        mainMenu();
+    }// end showContacts()
 
     public static void addContact() {
-//        System.out.println("test addContact");
         scanner.useDelimiter("\n");
 
         System.out.print("Enter the contact's first name: ");
@@ -70,42 +94,50 @@ public class ContactsMain_v2 extends Contact{
         System.out.print("Enter the contact's phone number: ");
         int enteredPhoneNumber = scanner.nextInt();
 
-//        System.out.printf("Entered first name: %s\nEntered last name: %s\nEntered phone number: %d", enteredFirstName, enteredLastName, enteredPhoneNumber);
         Contact contact = new Contact(enteredFirstName, enteredLastName, enteredPhoneNumber);
 
-//        String contactToString = contact.toString();
-//
-//        System.out.println(contactToString);
+        String contactString = String.format("%s %s\t| %d", contact.getContactFirstName(), contact.getContactLastName(), contact.getContactPhoneNumber());
 
-        contacts.add(contact);
+        contacts.add(contactString);
+
+        try {
+            // Files class - contains static methods to read, write, create, and delete files.
+            // .exists(Path filepath) - checks whether or not the file exists.
+            // .notExists(Path filepath)
+            if(Files.notExists(dataDirectory)) {
+                // create a new directory if the file does not exist.
+                // .createDirectory(Path filepath)
+                // .createDirectories(Path filepath)
+                Files.createDirectory(dataDirectory);
+            }
+
+            if(!Files.exists(dataFile)) {
+                // .createFile(Path filepath)
+                Files.createFile(dataFile);
+            }
+
+
+            if(Files.exists(dataFile)) {
+                Files.write(dataFile, Arrays.asList(contactString), StandardOpenOption.APPEND);
+            }
+        } catch(IOException iox) {
+            iox.printStackTrace();
+        }
+
+        mainMenu();
     }// end addContact()
 
     public static void searchContact() {
         System.out.println("test searchContact");
+        mainMenu();
     }
 
     public static void deleteContact() {
         System.out.println("test deleteContact");
+        mainMenu();
     }
 
     public static void main(String[] args) {
-//        System.out.println("test");
-//        showContacts();
-//        addContact();
-//        searchContact();
-//        deleteContact();
-//        mainMenu();
-//        addContact();
-//        System.out.println(contacts);
-//        addContact();
-//        System.out.println(contacts);
-        Contact c1 = new Contact("person1First", "person1Last", 1234567);
-        Contact c2 = new Contact("person2First", "person2Last", 1234567);
-        Contact c3 = new Contact("person3First", "person3Last", 1234567);
-        contacts.add(c1);
-        contacts.add(c2);
-        contacts.add(c3);
-
-        System.out.println(contacts);
+        mainMenu(); //starts the program
     }// end psvm
 }//end class ContactsMain_v2
